@@ -1,5 +1,5 @@
 {
-  "name": "xwebpack",
+  "name": "zwebpack",
   "version": "0.0.1",
   "description": "no webpack config.",
   "keywords": [
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dengyongqing/xwebpack.git"
+    "url": "git+https://github.com/dengyongqing/zwebpack.git"
   },
   "author": "dengyongqing",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dengyongqing/xwebpack/issues"
+    "url": "https://github.com/dengyongqing/zwebpack/issues"
   },
-  "homepage": "https://github.com/dengyongqing/xwebpack#readme",
+  "homepage": "https://github.com/dengyongqing/zwebpack#readme",
   "dependencies": {
     "autoprefixer": "^8.6.0",
     "babel-core": "^6.26.3",

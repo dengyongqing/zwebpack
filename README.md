@@ -1,4 +1,4 @@
-# xwebpack
+# zwebpack
 从此告别webpack复杂的配置，一键打包。
 
 > 这个项目是在webpack上做的一层封装，所以你既可以享受webpack带来的便捷，又不需要处理webpack复杂的配置。
@@ -8,33 +8,33 @@
 ## 安装
 
 ```bash
-npm i xwebpack -D
+npm i zwebpack -D
 ```
 
-xwebpack可以全局安装，但是不推荐.
+zwebpack可以全局安装，但是不推荐.
 
 ## 使用方法
 
-安装xwebpack之后，在package.json的scripts中添加打包脚本。
+安装zwebpack之后，在package.json的scripts中添加打包脚本。
 
 ```json
 {
   "scripts": {
-    "build": "xwebpack -e src"
+    "build": "zwebpack -e src"
   }
 }
 ```
 
 **完全零配置，完全自动化**
 
-你可以放心的在项目中使用react，es6, less, polyfill等，xwebpack全部帮你集成了。
+你可以放心的在项目中使用react，es6, less, polyfill等，zwebpack全部帮你集成了。
 
 ## 命令行
 
-以下是你使用 `xwebpack --help` 打印的使用信息.
+以下是你使用 `zwebpack --help` 打印的使用信息.
 
 ```bash
-  Usage: xwebpack [options]
+  Usage: zwebpack [options]
 
   Options:
 
@@ -44,9 +44,9 @@ xwebpack可以全局安装，但是不推荐.
     --mv, --modifyVars [modifyVars]  Enables run-time modification of Less variables.
     --bp, --babelPolyfill            Use babel-polyfill to polyfill your code.
     --pfx, --prefix [prefix]         Add prefix to output filename. (default: )
-    -c, --xConfig [xConfig]          config file of xwebpack
-    -e, --entry [entry]              The entry of xwebpack (default: ./src/index.js)
-    -p, --path [path]                The output path of xwebpack (default: ./dist)
+    -c, --xConfig [xConfig]          config file of zwebpack
+    -e, --entry [entry]              The entry of zwebpack (default: ./src/index.js)
+    -p, --path [path]                The output path of zwebpack (default: ./dist)
     -j, --jsx                        Entry extension is .jsx
     -m, --mode [mode]                production or development. (default: production)
     -a, --alias <alias>              Alias for webpack resolve. (A json file | name=path,name=path)
@@ -58,18 +58,18 @@ xwebpack可以全局安装，但是不推荐.
 ## 命令
 
 ```bash
-xwebpack [options]
+zwebpack [options]
 ```
 
 #### -V, --version
 
-输出当前xwebpack的版本。
+输出当前zwebpack的版本。
 
 #### -c, --config
 
-指定配置文件。虽然xwebpack的目标是没有配置，但是你你也可以使用配置文件来处理比较复杂的配置。
+指定配置文件。虽然zwebpack的目标是没有配置，但是你你也可以使用配置文件来处理比较复杂的配置。
 
-`xwebpack -c xwebpack.config.js`
+`zwebpack -c zwebpack.config.js`
 
 ```javascript
 /**
@@ -103,7 +103,7 @@ module.exports = {
 webpack.resolve.modules, 相对于当前运行目录.
 
 ```bash
-xwebpack --root ..
+zwebpack --root ..
 ```
 
 对应的webpack配置为
@@ -130,9 +130,9 @@ Enables run-time modification of Less variables (Less).
 比如：
 
 ```bash
-xwebpack -e list --mv ./theme/index.less
+zwebpack -e list --mv ./theme/index.less
 # or
-xwebpack -e list --mv ./theme/theme.json
+zwebpack -e list --mv ./theme/theme.json
 ```
 
 #### --bp, --babelPolyfill
@@ -155,7 +155,7 @@ zh-CN.min.js
 
 #### -e, --entry [filename | directory | mixed]
 
-指定xwebpack的入口. (默认: 'bundle=./src/index.js')
+指定zwebpack的入口. (默认: 'bundle=./src/index.js')
 
 打包后的文件需要一个名字，所以entry的格式是这样的 `name=filename`.
 
@@ -164,11 +164,11 @@ zh-CN.min.js
 * 文件名
 
   ```bash
-  xwebpack -e home=entry/index.js
+  zwebpack -e home=entry/index.js
   ```
 * 目录
 
-  你可以直接指定一个目录为入口，xwebpack会自动寻找入口文件`index.js | index.jsx`.
+  你可以直接指定一个目录为入口，zwebpack会自动寻找入口文件`index.js | index.jsx`.
 
   比如你的文件目录是这样的：
   ```
@@ -179,7 +179,7 @@ zh-CN.min.js
       └── index.js
   ```
   ```bash
-  xwebpack -e bundle=entry
+  zwebpack -e bundle=entry
   ```
 
   如果你的文件目录是这样的：
@@ -198,19 +198,19 @@ zh-CN.min.js
   如果文件目录如上所示，那么你不需要指定name了，`about`和`home`会被自动当作打包后的名字。
 
   ```bash
-  xwebpack -e applications
+  zwebpack -e applications
   ```
 * 混合使用
 
   ```bash
-  xwebpack -e home=src/index.js,applications
+  zwebpack -e home=src/index.js,applications
   ```
 
 #### -p, --path [value]
 
 `Default: './dist'`
 
-指定xwebpack打包后的输出目录。
+指定zwebpack打包后的输出目录。
 
 #### -j, --jsx
 
@@ -234,13 +234,13 @@ zh-CN.min.js
 ```
 
 ```bash
-xwebpack -e applications -a alias.json
+zwebpack -e applications -a alias.json
 ```
 
 或者这样:
 
 ```bash
-xwebpack -e src -a moment=client/moment.js
+zwebpack -e src -a moment=client/moment.js
 ```
 
 #### -s, --splitChunks
