@@ -1,4 +1,4 @@
-# xwebpack
+# zwebpack
 No webpack config.
 
 > This project is just a wrapper on webpack.
@@ -8,7 +8,7 @@ No webpack config.
 ## Install
 
 ```bash
-npm i xwebpack --save-dev
+npm i zwebpack --save-dev
 ```
 
 It can work globally, but not recommend.
@@ -20,7 +20,7 @@ package.json
 ```json
 {
   "scripts": {
-    "build": "xwebpack -e src"
+    "build": "zwebpack -e src"
   }
 }
 ```
@@ -29,10 +29,10 @@ package.json
 
 ## Cli
 
-This is the output when you command `xwebpack --help`.
+This is the output when you command `zwebpack --help`.
 
 ```bash
-  Usage: xwebpack [options]
+  Usage: zwebpack [options]
 
   Options:
 
@@ -42,9 +42,9 @@ This is the output when you command `xwebpack --help`.
     --mv, --modifyVars [modifyVars]  Enables run-time modification of Less variables.
     --bp, --babelPolyfill            Use babel-polyfill to polyfill your code.
     --pfx, --prefix [prefix]         Add prefix to output filename. (default: )
-    -c, --xConfig [xConfig]          config file of xwebpack
-    -e, --entry [entry]              The entry of xwebpack (default: ./src/index.js)
-    -p, --path [path]                The output path of xwebpack (default: ./dist)
+    -c, --xConfig [xConfig]          config file of zwebpack
+    -e, --entry [entry]              The entry of zwebpack (default: ./src/index.js)
+    -p, --path [path]                The output path of zwebpack (default: ./dist)
     -j, --jsx                        Entry extension is .jsx
     -m, --mode [mode]                production or development. (default: production)
     -a, --alias <alias>              Alias for webpack resolve. (A json file | name=path,name=path)
@@ -56,12 +56,12 @@ This is the output when you command `xwebpack --help`.
 ## Commands
 
 ```bash
-xwebpack [options]
+zwebpack [options]
 ```
 
 #### -V, --version
 
-Output the xwebpack's version.
+Output the zwebpack's version.
 
 #### -c, --config
 
@@ -99,7 +99,7 @@ module.exports = {
 webpack.resolve.modules, root context relative to process.cwd().
 
 ```bash
-xwebpack --root ..
+zwebpack --root ..
 ```
 
 means
@@ -125,9 +125,9 @@ the [filePath] can be a json or less file.
 eg.
 
 ```bash
-xwebpack -e list --mv ./theme/index.less
+zwebpack -e list --mv ./theme/index.less
 # or
-xwebpack -e list --mv ./theme/theme.json
+zwebpack -e list --mv ./theme/theme.json
 ```
 
 #### --bp, --babelPolyfill
@@ -150,18 +150,18 @@ zh-CN.min.js
 
 #### -e, --entry [filename | directory | mixed]
 
-Specify the entry of xwebpack. (default: 'bundle=./src/index.js')
+Specify the entry of zwebpack. (default: 'bundle=./src/index.js')
 
 bundle need a name, so you need format it like this `name=filename`.
 
 * filename
 
   ```bash
-  xwebpack -e home=entry/index.js
+  zwebpack -e home=entry/index.js
   ```
 * directory
 
-  You can specify a directory, and xwebpack will find the index automatically.
+  You can specify a directory, and zwebpack will find the index automatically.
 
   eg.
   ```
@@ -172,7 +172,7 @@ bundle need a name, so you need format it like this `name=filename`.
       └── index.js
   ```
   ```bash
-  xwebpack -e bundle=entry
+  zwebpack -e bundle=entry
   ```
 
   eg.
@@ -189,19 +189,19 @@ bundle need a name, so you need format it like this `name=filename`.
   ```
   When the directory like this, you do not need specify the name of bundle, the `about` and `home` will be name.
   ```bash
-  xwebpack -e applications
+  zwebpack -e applications
   ```
 * Mixed
 
   ```bash
-  xwebpack -e home=src/index.js,applications
+  zwebpack -e home=src/index.js,applications
   ```
 
 #### -p, --path [value]
 
 `Default: './dist'`
 
-Specify the output directory of xwebpack.
+Specify the output directory of zwebpack.
 
 #### -j, --jsx
 
@@ -225,13 +225,13 @@ Webpack resolve alias, [alias] is a json file like this.
 ```
 
 ```bash
-xwebpack -e applications -a alias.json
+zwebpack -e applications -a alias.json
 ```
 
 or just use like this:
 
 ```bash
-xwebpack -e src -a moment=client/moment.js
+zwebpack -e src -a moment=client/moment.js
 ```
 
 #### -s, --splitChunks

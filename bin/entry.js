@@ -1,9 +1,9 @@
 /**
- * @cmd: xbundle -e a=index.js -- specify a file as entry
- * @cmd: xbundle -e index=index.js,lib=lib/index.js,other=other/index.js -- specify files list as entry
- * @cmd: xbundle -e src -- specify a folder as entry, xbundle will find folders under src, and find the index.
- * @cmd: xbundle -e src,lib -- specify folders list as entry, xbundle will find folders under src and lib, and find their index.
- * @cmd: xbundle -e home=src/index.js,list -- mixed
+ * @cmd: zwebpack -e a=index.js -- specify a file as entry
+ * @cmd: zwebpack -e index=index.js,lib=lib/index.js,other=other/index.js -- specify files list as entry
+ * @cmd: zwebpack -e src -- specify a folder as entry, zwebpack will find folders under src, and find the index.
+ * @cmd: zwebpack -e src,lib -- specify folders list as entry, zwebpack will find folders under src and lib, and find their index.
+ * @cmd: zwebpack -e home=src/index.js,list -- mixed
  */
 
 const fs = require('fs');
@@ -21,7 +21,7 @@ module.exports = (argEntry, fileIndex, polyfill) => {
   const entrys = argEntry.split(',').map((entry) => {
     const item = entry.split('=');
     if(item.length < 2 && (entry.substr(-4, 4) === '.jsx' || entry.substr(-3, 3) === '.js')) {
-      throw 'You need specify entry like that: `xbundle -e name=xxx`';
+      throw 'You need specify entry like that: `zwebpack -e name=xxx`';
     }
     return item.length > 1 ? {
       name: item[0],
